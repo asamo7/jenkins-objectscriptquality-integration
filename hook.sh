@@ -8,6 +8,10 @@ GIT_URL=http://github.com/asamo7/spring-petclinic
 BRANCH=master
 COOKIE_JAR=/tmp/cookies
 
+echo "JENKINS_USER: "$JENKINS_USER
+echo "JENKINS_TOKEN: "$JENKINS_TOKEN
+echo "JOB_BUILD_TRIGGER_ACCESS_TOKEN: "$JENKINS_OBJECTSCRIPTQUALITY_TRIGGER_ACCESS_TOKEN
+
 JENKINS_CRUMB=$(curl --silent --cookie-jar $COOKIE_JAR -s -u $JENKINS_USER:$JENKINS_TOKEN $JENKINS_URL'/crumbIssuer/api/json' | sed -E 's/.*"crumb":"?([^,"]*)"?.*/\1/')
 echo "JENKINS CRUMB: "$JENKINS_CRUMB
 JOB_NAME_TO_CALL=${GIT_URL##*/}
