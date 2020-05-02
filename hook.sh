@@ -13,7 +13,7 @@ echo "JENKINS CRUMB: "$JENKINS_CRUMB
 JOB_NAME_TO_CALL=${GIT_URL##*/}
 echo "JOB NAME TO CALL: "$JOB_NAME_TO_CALL
 
-EXISTING_JOB_NAME=$(curl $JENKINS_URL'/job/Job%20generator%20-%20jobs/job/'$JOB_NAME_TO_CALL'/api/json' -u $JENKINS_USER:$JENKINS_TOKEN | sed -E 's/.*"name":"?([^,"]*)"?.*/\1/')
+EXISTING_JOB_NAME=$(curl $JENKINS_URL'/job/Jobs/job/'$JOB_NAME_TO_CALL'/api/json' -u $JENKINS_USER:$JENKINS_TOKEN | sed -E 's/.*"name":"?([^,"]*)"?.*/\1/')
 echo "NAME OF EXISTING JOB: "$EXISTING_JOB_NAME
 
 if [ "$EXISTING_JOB_NAME" != "$JOB_NAME_TO_CALL" ]
