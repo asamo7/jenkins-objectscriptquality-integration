@@ -20,7 +20,7 @@ if [ "$EXISTING_JOB_NAME" != "$JOB_NAME_TO_CALL" ]
 then
     echo "JOB NOT EXISTS"
 
-    curl -G -I --cookie $COOKIE_JAR $JENKINS_URL'/job/Job%20generator/job/Job%20generator/buildWithParameters?token='$JOB_BUILD_TRIGGER_ACCESS_TOKEN --data-urlencode 'GIT_URL='$GIT_URL --data-urlencode 'BRANCH='$BRANCH -H "Content-Type:text/xml" -u $JENKINS_USER:$JENKINS_TOKEN -v
+    curl -G -I --cookie $COOKIE_JAR $JENKINS_URL'/job/Generator/job/Generator/buildWithParameters?token='$JOB_BUILD_TRIGGER_ACCESS_TOKEN --data-urlencode 'GIT_URL='$GIT_URL --data-urlencode 'BRANCH='$BRANCH -H "Content-Type:text/xml" -u $JENKINS_USER:$JENKINS_TOKEN -v
     
     echo "JOB "$JOB_NAME_TO_CALL" CREATED!"
 fi  
