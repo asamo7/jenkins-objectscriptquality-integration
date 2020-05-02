@@ -28,6 +28,6 @@ fi
 sleep 10
 
 echo "INVOKE "$JOB_NAME_TO_CALL
-curl -X POST -s --cookie $COOKIE_JAR $JENKINS_URL'/job/Job%20generator%20-%20jobs/job/'$JOB_NAME_TO_CALL'/build' -H 'Jenkins-Crumb:'$JENKINS_CRUMB -u $JENKINS_USER:$JENKINS_TOKEN -v
+curl -X POST -s --cookie $COOKIE_JAR $JENKINS_URL'/job/Jobs/job/'$JOB_NAME_TO_CALL'/build' -H 'Jenkins-Crumb:'$JENKINS_CRUMB -u $JENKINS_USER:$JENKINS_TOKEN -v
 echo $JOB_NAME_TO_CALL" EXECUTED!"
 
